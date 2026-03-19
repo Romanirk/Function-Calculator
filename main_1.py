@@ -1,11 +1,11 @@
 import cv2
 import numpy as np
-
+print("Hello WORLD")
 image = cv2.imread("test.jpg") # изображение с которым работаем и указываем полный путь если не в папке с проектом
-
+print("Hello WORLD")
 cv2.imshow("original", image) # создание окна и вывод на него объекта с подписью
 cv2.waitKey(0) # ожидание нажатия любой кнопки
-
+print("Hello WORLD")
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #все цвета конвертируются в сервые оттенки
 cv2.imshow("gray", gray_image)  # создание окна и вывод на него объекта с подписью
 cv2.waitKey(0) # ожидание нажатия любой кнопки

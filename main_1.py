@@ -10,17 +10,21 @@ gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #все цвета конв
 cv2.imshow("gray", gray_image)  # создание окна и вывод на него объекта с подписью
 cv2.waitKey(0) # ожидание нажатия любой кнопки
 
+
+
 blurred_image = cv2.GaussianBlur(image, (11, 11), 0) # размытие картинки, размытие по х и y, коэффициент размытия если
 # 0 библиотека побирает автоматически
 cv2.imshow("blurred", blurred_image) # создание окна и вывод на него объекта с подписью
 cv2.waitKey(0) # ожидание нажатия любой кнопки
+
+
 
 hsv_image = cv2.cvtColor(blurred_image, cv2.COLOR_BGR2HSV) # у размытого изображения меняем цветовую палитру, так лучше работает
 cv2.imshow("hsv", hsv_image) # создание окна и вывод на него объекта с подписью
 cv2.waitKey(0) # ожидание нажатия любой кнопки
 
 # границы цвета можно найти в интернете или подобрать по палитре
-hsv_min = np.array((36, 25, 25), np.uint8) # нижняя граница зеленого цвета
+hsv_min = np.array((00, 100, 100), np.uint8) # нижняя граница зеленого цвета
 hsv_max = np.array((70, 255,255), np.uint8) # верхняя граница зеленого цвета
 green_mask = cv2.inRange(hsv_image, hsv_min, hsv_max) # создали маску
 cv2.imshow("mask", green_mask) # создание окна и вывод на него объекта с подписью
